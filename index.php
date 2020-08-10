@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link href="styles.css" />
+
+ 
+
+    <title>Solad | CARBON FOOTPRINT CALCULATOR</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="background-color: black !important; padding-left: 15%; font-size: 12px;">
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><strong>Working hours: Mon - Sat 08.00 - 17.00 </strong></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><strong>Call Us:+ 234 (0) 803 352 6989, +234 (0) 813 133 2873</strong></a>
+        </li>
+      </ul>    
+    </div>
+  </nav>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white !important; padding-left: 15%;">
+  <a class="navbar-brand" href="#"><img src="logo.png" style="width: 100%;" /></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" style="    padding-left: 31%;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;">
+      <li class="nav-item active">
+        <a class="nav-link" href="https://solad.co/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://solad.co/about-us/">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://solad.co/about-us/project-experience/">Project Experience</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://solad.co/about-us/social-impact/">Social Impact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://solad.co/contact/">Contact</a>
+      </li>    
+   </ul>
+ 
+  </div>
+</nav>
+  <main role="main" class="container " style="margin:auto">
+    <div class="jumbotron" style="padding: 2rem 2rem;">
+      <div class="row">
+        <div class="col text-center">
+         
+          <h3><strong>CARBON FOOTPRINT CALCULATOR</strong></h3>
+         
+          <p class="lead"><strong>Save money and start to reduce your carbon footprint today.</strong></p>
+          <p>
+            <img src="cal.svg" style="width: 80%" />
+          </p>
+        </div>
+        <div class="col">
+        <div id="message"></div>
+
+           <h3>What's Your Carbon Footprint?</h3>
+             <p>
+               <label class="label" for="power">Hours of power needed per week?</label> <br />
+               <input type="number" name="power" id="power" class="form-control" />
+             </p>
+             <p>
+              Using a diesel generator, your annual carbon emissions would be: <br />
+          
+              <span id="metric" class="bold-text">0</span> metric tonnes of CO2, equivalent to <br />
+          
+              Reducing oil consumption by <span id="barrels" class="bold-text">0</span> barrels of oil, or <br />
+         
+              Removing <span id="cars" class="bold-text">0</span> cars from the road, or <br />
+           
+              Eliminating <span id="miles" class="bold-text">0</span> km of vehincle passenger miles
+            </p>
+          <form action="process.php" method="POST">
+           
+              <label>Want to know more about your result?</label>
+              <br />
+               <input type="email" name="email" id="email" class="form-control" />
+
+               <input type="hidden" name="metrics" id="metricsHidden"  />
+               <input type="hidden" name="cars" id="carsHidden"  />
+               <input type="hidden" name="miles" id="milesHidden"  />
+               <input type="hidden" name="barrels" id="barrelsHidden" />
+               <input type="hidden" name="hours" id="hoursHidden" />
+
+               <br />
+
+               <button type="submit" class="btn btn-secondary btn-sm">Send My Results</button>
+            
+         </form>
+        </div>
+      </div>
+    
+    </div>
+  </main>
+  <script src="script.js"></script>
+  </body>
+</html>
