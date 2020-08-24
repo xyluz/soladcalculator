@@ -69,19 +69,21 @@ const displayAlert = (message,type) => {
 }
 
 const calculateMetrics = (power)=>{
-    return Math.round(((((power*7.4*52)*3.3*3413)/1000000)/161.3)*7.07);
+    return ((((((power*7.4*50)*3.3)*3413)/1000000)/161.3)*7.07).toString().substr(0,5);
 }
 
 const calculateBarrels = (power)=>{
-    return Math.round((power*7.4*52)/158.76)
+    return Math.round((power*7.4*50)/158.76);
 }
 
 const calculateMiles = (power)=>{
-    return Math.round((power*52*7.4)/(158.76/7.5)*100)
+   
+    return Math.round(((power*7.4*50)/(158.76/7.5)) * 100);
+
 }
 
 const calculateCars = (miles)=>{
-    return Math.round(miles/16093);
+    return Math.round((miles)/16093);
 }
 
 

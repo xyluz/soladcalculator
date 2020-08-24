@@ -67,11 +67,11 @@ $headers[] = 'Bcc: xyluz@ymail.com';
 
 if(mail($to, $subject, $message, implode("\r\n", $headers))) {
     
-	echo 'done';
+	header('location:index.php?email=sent');
 
 } else {
 
-    echo 'not';
+    header('location:index.php?email=error');
 
 }
 

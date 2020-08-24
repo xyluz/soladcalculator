@@ -66,7 +66,7 @@
  
   </div>
 </nav>
-  <main role="main" class="container " style="margin:auto">
+  <main role="main" class="container " style="margin:auto; line-height: 30px;">
     <div class="jumbotron" style="padding: 2rem 2rem;">
       <div class="row">
         <div class="col text-center">
@@ -80,6 +80,13 @@
         </div>
         <div class="col">
         <div id="message"></div>
+        <?php if(isset($_GET['email'])){ ?>
+
+        <div id="message" class="<?php echo $_GET['email']=='sent' ? 'alert alert-success' : 'alert alert-danger'; ?>" >
+          <?php echo $_GET['email'] =='sent' ? "Thank you! Your email has been registered" : "Oops! Something went wrong, please click <a href='index.php'>here</a> to try again"; ?>
+        </div>
+
+        <?php } ?>
 
            <h3>What's Your Carbon Footprint?</h3>
              <p>
@@ -87,19 +94,15 @@
                <input type="number" name="power" id="power" class="form-control" />
              </p>
              <p>
-              Using a diesel generator, your annual carbon emissions would be: <br />
+             Using a diesel generator, your annual carbon emissions would be: <br />
           
-              <span id="metric" class="bold-text">0</span> metric tonnes of CO2, equivalent to <br />
-          
-              Reducing oil consumption by <span id="barrels" class="bold-text">0</span> barrels of oil, or <br />
-         
-              Removing <span id="cars" class="bold-text">0</span> cars from the road, or <br />
-           
-              Eliminating <span id="miles" class="bold-text">0</span> km of vehincle passenger miles
+          <span id="metric" class="bold-text">0</span> metric tonnes of CO2. <br /><br />
+      
+          Switching to Solad solar power would reduce pollution by the equivalent of <span id="barrels" class="bold-text">0</span> barrels of oil, remove <span id="cars" class="bold-text">0</span> cars on the road, or <span id="miles" class="bold-text">0</span> km of vehincle passenger miles
             </p>
           <form action="process.php" method="POST">
-           
-              <label>Want to know more about your result?</label>
+       
+              <label>Commit to clean power today. Please submit your email below to get started.</label>
               <br />
                <input type="email" name="email" id="email" class="form-control" />
 
