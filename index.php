@@ -80,6 +80,7 @@
         </div>
         <div class="col">
         <div id="message"></div>
+        
         <?php if(isset($_GET['email'])){ ?>
 
         <div id="message" class="<?php echo $_GET['email']=='sent' ? 'alert alert-success' : 'alert alert-danger'; ?>" >

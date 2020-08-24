@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_POST) || !count($_POST) > 0){
+    header('location:index.php?email=error');
+}
+
 $cars = $_POST['cars'];
 $miles = $_POST['miles'];
 $barrels = $_POST['barrels'];
