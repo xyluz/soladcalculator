@@ -80,7 +80,7 @@
         </div>
         <div class="col">
         <div id="message"></div>
-        
+
         <?php if(isset($_GET['email'])){ ?>
 
         <div id="message" class="<?php echo $_GET['email']=='sent' ? 'alert alert-success' : 'alert alert-danger'; ?>" >
@@ -105,7 +105,7 @@
        
               <label>Commit to clean power today. Please submit your email below to get started.</label>
               <br />
-               <input type="email" name="email" id="email" class="form-control" />
+               <input type="email" name="email" id="email" class="form-control" required />
 
                <input type="hidden" name="metrics" id="metricsHidden"  />
                <input type="hidden" name="cars" id="carsHidden"  />
