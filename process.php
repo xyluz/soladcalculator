@@ -21,9 +21,10 @@ $message = "
 </head>
     <body>
        
-
+        <p>Thank you, your email has been registered. </p>
         <table border='1' style='text-align: center;'>
             <tr>
+                
                 <p>We are please to attach your carbon emissions savings report.</p>
             </tr>
             <tr>
@@ -65,7 +66,7 @@ $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
 $headers[] = 'To:<' .$email. '>';
-$headers[] = 'From: Solad Power Holdings <solad@xyluz.com>';
+$headers[] = 'From: Solad Power Holdings <info@solad.co>';
 $headers[] = 'Bcc: xyluz@ymail.com';
 
 

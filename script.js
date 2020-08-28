@@ -41,13 +41,13 @@ powerInput.addEventListener("keyup",()=>{
         barrelsDisplay.style = "font-weight:800";
         barrelsHiddenField.value = barrels;
 
-        milesDisplay.innerHTML = miles;
+        milesDisplay.innerHTML = numberWithCommas(miles);
         milesDisplay.style = "font-weight:800";
         milesHiddenField.value = miles;
         
         carsDisplay.innerHTML = cars;
         carsDisplay.style = "font-weight:800";
-        carsHiddenField.value = barrels;
+        carsHiddenField.value = cars;
 
         hoursHiddenField.value = power;
 
@@ -76,14 +76,16 @@ const calculateBarrels = (power)=>{
     return Math.round((power*7.4*50)/158.76);
 }
 
-const calculateMiles = (power)=>{
-   
+const calculateMiles = (power)=>{   
     return Math.round(((power*7.4*50)/(158.76/7.5)) * 100);
-
 }
 
 const calculateCars = (miles)=>{
     return Math.round((miles)/16093);
 }
 
+
+const numberWithCommas = (num)=>{
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
