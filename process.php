@@ -21,29 +21,29 @@ $message = "
 </head>
     <body>
        
-        <p>Thank you, your email has been registered. </p>
+        <p>Thank you! Your email has been registered. </p>
         <table border='1' style='text-align: center;'>
             <tr>
                 
-                <p>We are please to attach your carbon emissions savings report.</p>
+                <p>We are pleased to attach your carbon emissions savings report.</p>
             </tr>
             <tr>
-                <td style='color: white; background-color:grey;'>Solad Carbon Emissions Savings Calculator</td>
+                <td style='color: white; background-color:grey;'><h4>Solad Carbon Emissions Savings Calculator</h4></td>
             </tr>
             <tr>
-                <td style='color: white; background-color:#9C9C9C;'>For <strong> . $hours . </strong> hours of power: </td>
+                <td style='color: white; background-color:#9C9C9C;'>For <strong>  $hours  </strong> hours of power: </td>
             </tr>
             <tr>
-                <td style='color: white; background-color:#9C9C9C;'>Using a diesel generator, your annual carbon emissions would be: <strong>.$metrics. </strong> metric tonnes of CO2, equivalent to...</td>
+                <td style='color: white; background-color:#9C9C9C;'>Using a diesel generator, your annual carbon emissions would be: <strong>$metrics </strong> metric tonnes of CO2, equivalent to:</td>
             </tr>
             <tr>
-                <td style='color: white; background-color:#9C9C9C;'>Reducing oil consumption by <strong> .$barrels. </strong> barrels of oil, or</td>
+                <td style='color: white; background-color:#9C9C9C;'>Reducing oil consumption by <strong> $barrels </strong> barrels of oil, or</td>
             </tr>
             <tr>
-                <td style='color: white; background-color:#9C9C9C;'>Removing <strong> . $cars .</strong> cars from the road, or</td>
+                <td style='color: white; background-color:#9C9C9C;'>Removing <strong>  $cars </strong> cars from the road, or</td>
             </tr>
             <tr>
-                <td style='color: white; background-color:#9C9C9C;'>Eliminating <strong> . $miles .</strong> km of vehicle passenger miles</td>
+                <td style='color: white; background-color:#9C9C9C;'>Eliminating <strong>  $miles </strong> km of vehicle passenger miles</td>
             </tr>
         </table>
         <p>
@@ -64,14 +64,17 @@ $message = "
 
 $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-
-$headers[] = 'To:<' .$email. '>';
 $headers[] = 'From: Solad Power Holdings <info@solad.co>';
-$headers[] = 'Bcc: xyluz@ymail.com';
+$headers[] = 'Bcc: seyi@solad.co';
 
 
-if(mail($to, $subject, $message, implode("\r\n", $headers))) {
-    
+
+
+if(mail($email, $subject, $message, implode("\r\n", $headers))) {
+
+    $database = fopen('data.txt', 'a');//opens file in append mode  
+    fwrite($database, $email . "\n");  
+    fclose($database);  
 	header('location:index.php?email=sent');
 
 } else {
